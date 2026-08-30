@@ -30,7 +30,7 @@ export default function AboutPage() {
   return (
     <main id="top" className="aboutPage">
       <nav className="nav shell" aria-label="Main navigation">
-        <a className="wordmark" href="/">Stefan</a>
+        <a className="returnButton" href="/">← Return home</a>
         <div className="navLinks"><a href="#currently">Currently</a><a href="/#contact">Contact</a></div>
       </nav>
 
