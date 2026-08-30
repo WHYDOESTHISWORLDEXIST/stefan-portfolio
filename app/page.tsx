@@ -29,7 +29,7 @@ export default function Home() {
       </nav>
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
-          <a href="#certifications"><span>Certifications</span><strong>0</strong></a>
+          <a href="#certifications"><span>Certifications</span><strong>1</strong></a>
           <a href="#books"><span>Books published</span><strong>1</strong></a>
           <a href="#websites"><span>Websites launched</span><strong>1</strong></a>
           <a href="#projects"><span>Current projects</span><strong>3</strong></a>
@@ -66,8 +66,8 @@ export default function Home() {
           <div className="recordEntry"><strong>Personal portfolio</strong><span>This website · 2026</span></div>
         </div>
         <div className="recordBlock" id="certifications">
-          <div className="recordTitle"><p>Certifications</p><span>00</span></div>
-          <div className="emptyEntry">Nothing listed yet. I&apos;ll add certifications here as I earn them.</div>
+          <div className="recordTitle"><p>Certifications</p><span>01</span></div>
+          <div className="recordEntry"><strong>HubSpot Marketing Certification</strong><span>HubSpot Academy</span></div>
         </div>
         <div className="recordBlock" id="books">
           <div className="recordTitle"><p>Books published</p><span>01</span></div>
