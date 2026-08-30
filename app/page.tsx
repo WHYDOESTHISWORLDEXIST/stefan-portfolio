@@ -71,8 +71,9 @@ export default function Home() {
         </div>
         <div className="recordBlock" id="books">
           <div className="recordTitle"><p>Books published</p><span>01</span></div>
-          <a className="recordEntry recordLink" href="https://www.amazon.com/s?k=Semiconductors%3A+All+About+Them%2C+I+Guess%3F%3F%3F&i=stripbooks" target="_blank" rel="noreferrer">
-            <strong>Semiconductors: All About Them, I Guess???</strong><span>View on Amazon ↗</span>
+          <a className="recordEntry recordLink bookEntry" href="https://www.amazon.com/dp/B0HBPKS26N" target="_blank" rel="noreferrer">
+            <img src="/book-semiconductors.jpg" alt="Cover of Semiconductors: All About Them, I Guess? by Stefan Cutler" />
+            <span className="bookDetails"><strong>Semiconductors: All About Them, I Guess?</strong><span>View on Amazon ↗</span></span>
           </a>
         </div>
       </section>
