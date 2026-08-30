@@ -29,7 +29,7 @@ export default function Home() {
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
           <a href="#certifications"><span>Certifications</span><strong>0</strong></a>
-          <a href="#books"><span>Books published</span><strong>0</strong></a>
+          <a href="#books"><span>Books published</span><strong>1</strong></a>
           <a href="#websites"><span>Websites launched</span><strong>1</strong></a>
           <a href="#projects"><span>Current projects</span><strong>2</strong></a>
         </div>
@@ -65,8 +65,10 @@ export default function Home() {
           <div className="emptyEntry">Nothing listed yet. I&apos;ll add certifications here as I earn them.</div>
         </div>
         <div className="recordBlock" id="books">
-          <div className="recordTitle"><p>Books published</p><span>00</span></div>
-          <div className="emptyEntry">No books published yet.</div>
+          <div className="recordTitle"><p>Books published</p><span>01</span></div>
+          <a className="recordEntry recordLink" href="https://www.amazon.com/s?k=Semiconductors%3A+All+About+Them%2C+I+Guess%3F%3F%3F&i=stripbooks" target="_blank" rel="noreferrer">
+            <strong>Semiconductors: All About Them, I Guess???</strong><span>View on Amazon ↗</span>
+          </a>
         </div>
       </section>
 
