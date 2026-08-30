@@ -31,7 +31,7 @@ export default function AboutPage() {
     <main id="top" className="aboutPage">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="returnButton" href="/">← Return home</a>
-        <div className="navLinks"><a href="#currently">Currently</a><a href="/#contact">Contact</a></div>
+        <div className="navLinks"><a href="#education">Education</a><a href="#currently">Currently</a><a href="/#contact">Contact</a></div>
       </nav>
 
       <header className="aboutHero shell">
@@ -57,9 +57,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="education shell" id="education">
+        <header className="sectionHead"><p>02 / Education</p><h2>Where I&apos;m studying</h2></header>
+        <div className="educationList">
+          <article className="educationEntry">
+            <span>01</span>
+            <h3>Great Neck South High School</h3>
+            <p>Aug 2022 — Jun 2026</p>
+          </article>
+          <article className="educationEntry">
+            <span>02</span>
+            <h3>Olin College of Engineering</h3>
+            <p>Sept 2026 — May 2030</p>
+          </article>
+        </div>
+      </section>
+
       <section className="aboutValues">
         <div className="shell valuesGrid">
-          <p className="kicker">02 / The short version</p>
+          <p className="kicker">03 / The short version</p>
           <div>
             <h2>Curious by default.</h2>
             <p>I learn best by making something real, testing it, and improving it. That might mean building a website, thinking through a robotic arm, or reading until a complicated subject starts to feel understandable.</p>
