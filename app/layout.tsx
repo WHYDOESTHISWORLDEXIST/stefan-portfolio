@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://stefa-developer-portfolio.stefan-cutler.chatgpt.site'),
   openGraph: {
     title: 'Stefa — Developer & Creative Builder',
-    description: 'I turn curiosity into things that work.',
+    description: 'Curiosity. Built beautifully.',
     images: ['/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stefa — Developer & Creative Builder',
-    description: 'I turn curiosity into things that work.',
+    description: 'Curiosity. Built beautifully.',
     images: ['/og.png'],
   },
 };
