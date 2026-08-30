@@ -23,13 +23,13 @@ export default function Home() {
   return (
     <main id="top">
       <nav className="nav shell" aria-label="Main navigation">
-        <a className="wordmark" href="#top">Stefa</a>
+        <a className="wordmark" href="#top">Stefan</a>
         <div className="navLinks"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
       </nav>
 
       <section className="hero shell">
         <p className="kicker">Developer in progress</p>
-        <h1>Hello, I&apos;m Stefa.</h1>
+        <h1>Hello, I&apos;m Stefan.</h1>
         <p className="intro">I&apos;m learning to build for the web. This is where I keep track of what I&apos;ve made, what I&apos;m figuring out, and what comes next.</p>
         <div className="heroMeta"><a href="#work">See what I&apos;m working on ↓</a><span>Last updated August 2026</span></div>
       </section>
@@ -64,7 +64,7 @@ export default function Home() {
         <a className="emailLink" href="mailto:hello@example.com">hello@example.com ↗</a>
       </section>
 
-      <footer className="footer shell"><span>© 2026 Stefa</span><a href="#top">Back to top ↑</a></footer>
+      <footer className="footer shell"><span>© 2026 Stefan</span><a href="#top">Back to top ↑</a></footer>
     </main>
   );
 }
