@@ -12,7 +12,7 @@ const shelves = [
   {
     number: '02',
     title: 'Books I’m reading',
-    note: 'Nothing listed yet.',
+    note: 'Animal Farm by George Orwell',
   },
   {
     number: '03',
