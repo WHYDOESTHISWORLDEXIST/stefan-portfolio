@@ -76,7 +76,7 @@ export default function Home() {
           <div className="aboutCopy">
             <p>I&apos;m early in my development journey. I don&apos;t know everything yet, and that&apos;s the point—I like taking something unfamiliar apart until it makes sense.</p>
             <p>Right now I&apos;m focused on the web: learning how good interfaces are structured, how code becomes a working product, and how to make each project a little better than the last.</p>
-            <dl><div><dt>Known</dt><dd>C++, Java, TypeScript / JavaScript</dd></div><div><dt>Learning</dt><dd>HTML, CSS, Node.js</dd></div><div><dt>Using</dt><dd>VS Code, Git, GitHub</dd></div><div><dt>Interested in</dt><dd>Useful software and thoughtful design</dd></div></dl>
+            <dl><div><dt>Known</dt><dd>C++, Java, TypeScript / JavaScript</dd></div><div><dt>Learning</dt><dd>Python, HTML, CSS, Node.js</dd></div><div><dt>Using</dt><dd>VS Code, Git, GitHub</dd></div><div><dt>Interested in</dt><dd>Useful software and thoughtful design</dd></div></dl>
           </div>
         </div>
       </section>
