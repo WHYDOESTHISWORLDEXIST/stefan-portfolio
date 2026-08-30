@@ -1,21 +1,22 @@
 const projects = [
   {
-    year: '2026',
-    title: 'This website',
-    description: 'My first personal site. Built to learn the basics of layout, typography, responsive design, and publishing.',
-    tools: 'Next.js · CSS · Git',
+    year: 'In development',
+    title: 'Hydra robotic arm controls',
+    description: 'Contributing documentation and software work to a Raspberry Pi and Arduino control system with calibration, encoder feedback, clutch control, and safety monitoring.',
+    tools: 'Python · Arduino / C++ · Raspberry Pi',
+    href: 'https://github.com/eberhart441/hydra',
   },
   {
-    year: 'Ongoing',
-    title: 'Small web experiments',
-    description: 'A collection of simple pages and scripts I use to understand JavaScript and Node.js one idea at a time.',
-    tools: 'JavaScript · Node.js',
+    year: 'Built in 2026',
+    title: 'Tolerance analysis calculator',
+    description: 'A browser-based engineering tool for tolerance stacks, Monte Carlo simulation, design guidance, CAD data, saved projects, and report exports.',
+    tools: 'TypeScript · Next.js · Engineering math',
   },
   {
-    year: 'Next',
-    title: 'A useful tool',
-    description: 'I’m looking for a small, real problem worth solving. This space will become that project.',
-    tools: 'Research in progress',
+    year: 'Research phase',
+    title: 'Modular robotic arm',
+    description: 'Exploring a lower-cost arm made from interchangeable sections and pulley-driven hands, with software that adapts motion and grasp planning to each configuration.',
+    tools: 'Robotics · Machine learning · Mechanical design',
   },
 ];
 
@@ -31,7 +32,7 @@ export default function Home() {
           <a href="#certifications"><span>Certifications</span><strong>0</strong></a>
           <a href="#books"><span>Books published</span><strong>1</strong></a>
           <a href="#websites"><span>Websites launched</span><strong>1</strong></a>
-          <a href="#projects"><span>Current projects</span><strong>2</strong></a>
+          <a href="#projects"><span>Current projects</span><strong>3</strong></a>
         </div>
       </div>
 
@@ -39,7 +40,7 @@ export default function Home() {
         <p className="kicker">Developer in progress</p>
         <h1>Hello, I&apos;m Stefan.</h1>
         <p className="intro">I&apos;m learning to build for the web. This is where I keep track of what I&apos;ve made, what I&apos;m figuring out, and what comes next.</p>
-        <div className="heroMeta"><a href="#work">See what I&apos;m working on ↓</a><span>Last updated August 2026</span></div>
+        <div className="heroMeta"><a href="#projects">See what I&apos;m working on ↓</a><span>Last updated August 2026</span></div>
       </section>
 
       <section className="work shell" id="projects">
@@ -48,7 +49,11 @@ export default function Home() {
           {projects.map((project, index) => (
             <article className="project" key={project.title}>
               <span className="projectNumber">0{index + 1}</span>
-              <div><h3>{project.title}</h3><p>{project.description}</p></div>
+              <div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                {'href' in project && project.href ? <a href={project.href} target="_blank" rel="noreferrer">View project ↗</a> : null}
+              </div>
               <div className="projectMeta"><span>{project.tools}</span><span>{project.year}</span></div>
             </article>
           ))}
