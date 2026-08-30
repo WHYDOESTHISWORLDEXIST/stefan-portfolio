@@ -7,7 +7,7 @@ const shelves = [
   {
     number: '01',
     title: 'Games I’m playing',
-    note: 'Nothing listed yet.',
+    note: 'Hypixel SkyBlock · Roblox · Grand Theft Auto V',
   },
   {
     number: '02',
