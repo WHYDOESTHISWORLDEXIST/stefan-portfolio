@@ -84,7 +84,10 @@ export default function Home() {
       <section className="contact shell" id="contact">
         <p className="kicker">03 / Contact</p>
         <h2>If you&apos;re building something interesting, I&apos;d like to hear about it.</h2>
-        <a className="emailLink" href="mailto:stefan.cutler@gmail.com">stefan.cutler@gmail.com ↗</a>
+        <div className="contactLinks">
+          <a className="emailLink" href="mailto:stefan.cutler@gmail.com">stefan.cutler@gmail.com ↗</a>
+          <a className="emailLink" href="https://www.linkedin.com/in/stefan-cutler-9015223b3" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
       </section>
 
       <footer className="footer shell"><span>© 2026 Stefan</span><a href="#top">Back to top ↑</a></footer>
