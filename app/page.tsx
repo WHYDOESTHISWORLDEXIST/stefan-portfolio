@@ -24,8 +24,16 @@ export default function Home() {
     <main id="top">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="wordmark" href="#top">Stefan</a>
-        <div className="navLinks"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+        <div className="navLinks"><a href="#about">About</a><a href="#contact">Contact</a></div>
       </nav>
+      <div className="topicBar" aria-label="Portfolio topics">
+        <div className="shell topicBarInner">
+          <a href="#certifications"><span>Certifications</span><strong>0</strong></a>
+          <a href="#books"><span>Books published</span><strong>0</strong></a>
+          <a href="#websites"><span>Websites launched</span><strong>1</strong></a>
+          <a href="#projects"><span>Current projects</span><strong>2</strong></a>
+        </div>
+      </div>
 
       <section className="hero shell">
         <p className="kicker">Developer in progress</p>
@@ -34,7 +42,7 @@ export default function Home() {
         <div className="heroMeta"><a href="#work">See what I&apos;m working on ↓</a><span>Last updated August 2026</span></div>
       </section>
 
-      <section className="work shell" id="work">
+      <section className="work shell" id="projects">
         <header className="sectionHead"><p>01 / Work</p><h2>Things I&apos;m making</h2></header>
         <div className="projectList">
           {projects.map((project, index) => (
@@ -44,6 +52,21 @@ export default function Home() {
               <div className="projectMeta"><span>{project.tools}</span><span>{project.year}</span></div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="record shell" aria-label="Published work and credentials">
+        <div className="recordBlock" id="websites">
+          <div className="recordTitle"><p>Websites launched</p><span>01</span></div>
+          <div className="recordEntry"><strong>Personal portfolio</strong><span>This website · 2026</span></div>
+        </div>
+        <div className="recordBlock" id="certifications">
+          <div className="recordTitle"><p>Certifications</p><span>00</span></div>
+          <div className="emptyEntry">Nothing listed yet. I&apos;ll add certifications here as I earn them.</div>
+        </div>
+        <div className="recordBlock" id="books">
+          <div className="recordTitle"><p>Books published</p><span>00</span></div>
+          <div className="emptyEntry">No books published yet.</div>
         </div>
       </section>
 
