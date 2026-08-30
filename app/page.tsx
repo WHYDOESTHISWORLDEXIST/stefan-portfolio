@@ -84,7 +84,7 @@ export default function Home() {
       <section className="contact shell" id="contact">
         <p className="kicker">03 / Contact</p>
         <h2>If you&apos;re building something interesting, I&apos;d like to hear about it.</h2>
-        <a className="emailLink" href="mailto:hello@example.com">hello@example.com ↗</a>
+        <a className="emailLink" href="mailto:stefan.cutler@gmail.com">stefan.cutler@gmail.com ↗</a>
       </section>
 
       <footer className="footer shell"><span>© 2026 Stefan</span><a href="#top">Back to top ↑</a></footer>
