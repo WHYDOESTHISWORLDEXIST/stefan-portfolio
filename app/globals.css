@@ -29,4 +29,67 @@ a { color:inherit; text-decoration:none; }
 @media (max-width:760px) { .shell{width:min(100% - 32px,1080px)}.navLinks{gap:16px}.topicBar{overflow-x:auto}.topicBarInner{width:650px;margin-left:16px}.topicBar a{padding-block:13px}.hero{min-height:610px;padding-top:90px}.hero h1{font-size:clamp(58px,18vw,78px)}.intro{font-size:23px}.heroMeta{display:block}.heroMeta span{display:block;margin-top:18px}.work{padding:86px 0 100px}.sectionHead{display:block;margin-bottom:44px}.sectionHead>p{margin-bottom:20px}.project{grid-template-columns:36px 1fr;gap:12px;padding:28px 0}.projectMeta{grid-column:2;justify-content:flex-start;margin-top:4px}.record{padding-bottom:90px}.recordBlock{grid-template-columns:1fr;gap:24px}.recordTitle{padding-right:0}.recordEntry{display:block}.recordEntry span{display:block;margin-top:8px}.bookEntry{display:flex}.bookEntry img{width:112px}.bookDetails{display:block;min-height:0}.bookDetails>span{margin-top:12px}.about{padding:90px 0}.aboutGrid{grid-template-columns:1fr;gap:0}.aboutCopy{padding-top:0}.contact{padding:96px 0 110px}.contact h2{font-size:45px}.footer{padding-bottom:28px}}
 @media (max-width:760px) { .aboutPage .nav{gap:8px}.aboutPage .navLinks{gap:8px;font-size:11px}.returnButton{flex-shrink:0;padding-inline:6px;font-size:11px}.aboutHero{min-height:680px;padding-top:92px}.aboutHero h1{font-size:clamp(56px,17vw,76px);margin-bottom:42px}.aboutIntro{grid-template-columns:1fr;gap:18px;margin-left:0}.currently,.education{padding:86px 0 100px}.shelf,.educationEntry{grid-template-columns:34px 1fr;gap:12px}.shelf p,.educationEntry p{grid-column:2}.valuesGrid{grid-template-columns:1fr;gap:34px}.aboutValues{padding:90px 0} }
 @media (max-width:760px) { .musicPage .nav{gap:8px}.musicPage .navLinks{gap:8px;font-size:11px}.musicHero{min-height:670px;padding-top:92px}.musicHero h1{font-size:clamp(58px,18vw,78px)}.musicHeroBottom{display:block}.musicHeroBottom p{font-size:16px;margin-bottom:28px}.songOfWeek{padding:64px 0 86px}.featuredSong{min-height:260px;padding:24px}.featuredSongMark{right:10px;font-size:170px}.playlistSection{padding:86px 0 100px}.playlistGrid{grid-template-columns:1fr}.playlistCard{min-height:230px;padding:24px 0}.playlistCard:nth-child(odd){border-right:0}.playlistCard:nth-child(even){padding-left:0}.musicNote{padding:90px 0}.musicNoteInner{grid-template-columns:1fr;gap:32px} }
+
+/* A separate, touch-friendly composition for phones and small tablets. */
+@media (max-width:760px) {
+  .shell { width:calc(100% - 32px); }
+  .nav,.aboutPage .nav,.musicPage .nav { height:auto; min-height:0; padding:16px 0 14px; flex-wrap:wrap; gap:14px; }
+  .wordmark { font-size:17px; }
+  .navLinks,.aboutPage .navLinks,.musicPage .navLinks { order:2; width:100%; padding-top:13px; border-top:1px solid var(--line); justify-content:space-between; gap:12px; font-size:12px; }
+  .returnButton { min-height:34px; padding:0 12px; font-size:12px; }
+
+  .topicBar { position:relative; top:auto; overflow:visible; backdrop-filter:none; }
+  .topicBarInner { width:calc(100% - 32px); margin-inline:auto; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .topicBar a,.topicBar a:not(:first-child) { padding:12px 10px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); font-size:10px; }
+  .topicBar a:nth-child(2n) { border-right:0; }
+  .topicBar a:nth-last-child(-n+2) { border-bottom:0; }
+
+  .hero { min-height:auto; padding:76px 0 42px; }
+  .hero h1 { margin:17px 0 24px; font-size:clamp(54px,17vw,76px); }
+  .intro { font-size:22px; line-height:1.32; }
+  .heroMeta { margin-top:68px; padding-top:0; }
+
+  .work { padding:78px 0 88px; }
+  .sectionHead { margin-bottom:38px; }
+  .project { grid-template-columns:30px minmax(0,1fr); gap:12px; padding:26px 0 28px; }
+  .project h3 { font-size:23px; }
+  .projectMeta { grid-column:2; flex-direction:column; gap:5px; }
+
+  .record { padding-bottom:82px; }
+  .recordBlock { gap:20px; padding:22px 0 38px; }
+  .recordTitle { padding-bottom:2px; }
+  .bookEntry { display:grid; grid-template-columns:96px minmax(0,1fr); gap:20px; }
+  .bookEntry img { width:96px; }
+  .bookDetails { display:flex; min-height:0; flex-direction:column; justify-content:flex-start; gap:14px; }
+  .bookDetails>span { margin-top:0; white-space:normal; }
+
+  .aboutHero,.musicHero { min-height:auto; padding:76px 0 64px; }
+  .aboutHero h1 { margin:20px 0 38px; }
+  .jumpLink { margin-top:56px; padding-top:0; }
+  .shelf,.educationEntry { grid-template-columns:28px minmax(0,1fr); padding:24px 0 26px; }
+  .shelf p,.educationEntry p { margin-top:3px; }
+  .valuesGrid { gap:28px; }
+
+  .musicHero h1 { margin-bottom:48px; }
+  .musicHeroBottom { margin-top:0; }
+  .appleMusicLink { width:100%; justify-content:center; min-height:48px; }
+  .featuredSong { min-height:240px; padding:22px; }
+  .featuredSong h2 { font-size:clamp(64px,22vw,96px); }
+  .featuredSongMark { right:8px; font-size:140px; opacity:.78; }
+  .playlistCard { min-height:210px; }
+
+  .contactLinks { display:grid; gap:18px; justify-items:start; }
+  .emailLink { max-width:100%; overflow-wrap:anywhere; }
+  .footer { gap:18px; align-items:flex-end; }
+}
+
+@media (max-width:380px) {
+  .shell { width:calc(100% - 24px); }
+  .topicBarInner { width:calc(100% - 24px); }
+  .navLinks,.aboutPage .navLinks,.musicPage .navLinks { font-size:11px; gap:8px; }
+  .topicBar a,.topicBar a:not(:first-child) { padding-inline:7px; letter-spacing:.02em; }
+  .hero h1,.aboutHero h1,.musicHero h1 { font-size:52px; }
+  .intro { font-size:20px; }
+  .contact h2 { font-size:39px; }
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
