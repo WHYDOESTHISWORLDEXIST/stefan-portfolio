@@ -6,7 +6,7 @@ export const metadata = {
 const appleMusicUrl = 'https://music.apple.com/us/playlist/netty-demon/pl.u-KVXBk1JuZqWrjB1';
 
 const playlists = [
-  { number: '01', title: 'Netty Demon', description: 'My playlist on Apple Music.', status: 'Listen on Apple Music ↗', href: appleMusicUrl },
+  { number: '01', title: 'Current playlist', description: 'Netty Demon — my current rotation on Apple Music.', status: 'Listen on Apple Music ↗', href: appleMusicUrl },
   { number: '02', title: 'Focus & coding', description: 'Music for building, reading, and getting work done.', status: 'Playlist coming soon' },
   { number: '03', title: 'Late night', description: 'A quieter soundtrack for the end of the day.', status: 'Playlist coming soon' },
   { number: '04', title: 'All-time favorites', description: 'Albums and songs that have stayed with me.', status: 'Recommendations coming soon' },
@@ -26,7 +26,7 @@ export default function MusicPage() {
         <div className="musicHeroBottom">
           <p>A place for the tracks, albums, and playlists that have my attention. I&apos;ll keep this page updated as my listening changes.</p>
           {appleMusicUrl ? (
-            <a className="appleMusicLink" href={appleMusicUrl} target="_blank" rel="noreferrer">Open Netty Demon on Apple Music ↗</a>
+            <a className="appleMusicLink" href={appleMusicUrl} target="_blank" rel="noreferrer">Open my current playlist ↗</a>
           ) : (
             <span className="appleMusicLink isDisabled" aria-disabled="true">Apple Music link coming soon</span>
           )}
