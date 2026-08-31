@@ -24,7 +24,7 @@ export default function Home() {
     <main id="top">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="wordmark" href="#top">Stefan</a>
-        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="#contact">Contact</a></div>
+        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="/contact">Contact</a></div>
       </nav>
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
@@ -93,7 +93,7 @@ export default function Home() {
         <p className="kicker">03 / Contact</p>
         <h2>If you&apos;re building something interesting, I&apos;d like to hear about it.</h2>
         <div className="contactLinks">
-          <a className="emailLink" href="mailto:stefan.cutler@gmail.com">stefan.cutler@gmail.com ↗</a>
+          <a className="emailLink" href="/contact">Send me a message ↗</a>
           <a className="emailLink" href="https://www.linkedin.com/in/stefan-cutler-9015223b3" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>
       </section>

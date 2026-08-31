@@ -31,7 +31,7 @@ export default function AboutPage() {
     <main id="top" className="aboutPage">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="returnButton" href="/">← Return home</a>
-        <div className="navLinks"><a href="#education">Education</a><a href="#currently">Currently</a><a href="/#contact">Contact</a></div>
+        <div className="navLinks"><a href="#education">Education</a><a href="#currently">Currently</a><a href="/contact">Contact</a></div>
       </nav>
 
       <header className="aboutHero shell">
