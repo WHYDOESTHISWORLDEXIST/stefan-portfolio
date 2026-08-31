@@ -1,0 +1,62 @@
+export const metadata = {
+  title: 'Music — Stefan',
+  description: 'The music Stefan is listening to, organized into personal playlists.',
+};
+
+const appleMusicUrl = '';
+
+const playlists = [
+  { number: '01', title: 'On repeat', description: 'The songs I keep coming back to.', status: 'Tracks coming soon' },
+  { number: '02', title: 'Focus & coding', description: 'Music for building, reading, and getting work done.', status: 'Playlist coming soon' },
+  { number: '03', title: 'Late night', description: 'A quieter soundtrack for the end of the day.', status: 'Playlist coming soon' },
+  { number: '04', title: 'All-time favorites', description: 'Albums and songs that have stayed with me.', status: 'Recommendations coming soon' },
+];
+
+export default function MusicPage() {
+  return (
+    <main id="top" className="musicPage">
+      <nav className="nav shell" aria-label="Main navigation">
+        <a className="returnButton" href="/">← Return home</a>
+        <div className="navLinks"><a href="/about">About me</a><a href="#playlists">Playlists</a><a href="/#contact">Contact</a></div>
+      </nav>
+
+      <header className="musicHero shell">
+        <p className="kicker">Music</p>
+        <h1>What I&apos;m listening to.</h1>
+        <div className="musicHeroBottom">
+          <p>A place for the tracks, albums, and playlists that have my attention. I&apos;ll keep this page updated as my listening changes.</p>
+          {appleMusicUrl ? (
+            <a className="appleMusicLink" href={appleMusicUrl} target="_blank" rel="noreferrer">Open my Apple Music ↗</a>
+          ) : (
+            <span className="appleMusicLink isDisabled" aria-disabled="true">Apple Music link coming soon</span>
+          )}
+        </div>
+      </header>
+
+      <section className="playlistSection shell" id="playlists">
+        <header className="sectionHead"><p>01 / Playlists</p><h2>Different moods,<br />different queues.</h2></header>
+        <div className="playlistGrid">
+          {playlists.map((playlist) => (
+            <article className="playlistCard" key={playlist.title}>
+              <span className="playlistNumber">{playlist.number}</span>
+              <div>
+                <h3>{playlist.title}</h3>
+                <p>{playlist.description}</p>
+              </div>
+              <span className="playlistStatus">{playlist.status}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="musicNote">
+        <div className="shell musicNoteInner">
+          <p className="kicker">02 / Still listening</p>
+          <h2>This page will grow one song at a time.</h2>
+        </div>
+      </section>
+
+      <footer className="footer shell"><span>© 2026 Stefan</span><a href="#top">Back to top ↑</a></footer>
+    </main>
+  );
+}

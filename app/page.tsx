@@ -24,7 +24,7 @@ export default function Home() {
     <main id="top">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="wordmark" href="#top">Stefan</a>
-        <div className="navLinks"><a href="/about">About me</a><a href="#contact">Contact</a></div>
+        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="#contact">Contact</a></div>
       </nav>
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
