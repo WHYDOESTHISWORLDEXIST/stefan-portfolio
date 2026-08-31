@@ -33,8 +33,20 @@ export default function MusicPage() {
         </div>
       </header>
 
+      <section className="songOfWeek shell" aria-labelledby="song-of-week-title">
+        <p className="kicker">01 / Song of the week</p>
+        <div className="featuredSong">
+          <span className="featuredSongLabel">This week</span>
+          <div>
+            <h2 id="song-of-week-title">Sober</h2>
+            <p>by Nettspend</p>
+          </div>
+          <span className="featuredSongMark" aria-hidden="true">♪</span>
+        </div>
+      </section>
+
       <section className="playlistSection shell" id="playlists">
-        <header className="sectionHead"><p>01 / Playlists</p><h2>Different moods,<br />different queues.</h2></header>
+        <header className="sectionHead"><p>02 / Playlists</p><h2>Different moods,<br />different queues.</h2></header>
         <div className="playlistGrid">
           {playlists.map((playlist) => (
             <article className="playlistCard" key={playlist.title}>
@@ -55,7 +67,7 @@ export default function MusicPage() {
 
       <section className="musicNote">
         <div className="shell musicNoteInner">
-          <p className="kicker">02 / Still listening</p>
+          <p className="kicker">03 / Still listening</p>
           <h2>This page will grow one song at a time.</h2>
         </div>
       </section>
