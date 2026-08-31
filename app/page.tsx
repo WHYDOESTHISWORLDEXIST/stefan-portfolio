@@ -4,7 +4,6 @@ const projects = [
     title: 'Hydra robotic arm controls',
     description: 'Contributing documentation and software work to a Raspberry Pi and Arduino control system with calibration, encoder feedback, clutch control, and safety monitoring.',
     tools: 'Python · Arduino / C++ · Raspberry Pi',
-    href: 'https://github.com/eberhart441/hydra',
   },
   {
     year: 'Built in 2026',
