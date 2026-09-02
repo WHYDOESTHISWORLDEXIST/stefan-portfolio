@@ -41,7 +41,7 @@ export default function ContactForm() {
         <span><strong>Send me occasional updates</strong><small>Optional. Check this if you want recurring emails about new projects, writing, and updates. You can unsubscribe anytime.</small></span>
       </label>
       <button className="submitButton" type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send message'}</button>
-      <p className="privacyNote">Your details are used only to respond to your message and, if selected, send occasional updates.</p>
+      <p className="privacyNote">Your details are used only to respond to your message and, if selected, send occasional updates. <a href="/privacy">Read the Privacy Policy.</a></p>
       {status ? <p className="formStatus" role="status" aria-live="polite">{status}</p> : null}
     </form>
   );

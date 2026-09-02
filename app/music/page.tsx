@@ -72,7 +72,7 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <footer className="footer shell"><span>© 2026 Stefan</span><a href="#top">Back to top ↑</a></footer>
+      <footer className="footer shell"><span>© 2026 Stefan</span><div className="footerLinks"><a href="/privacy">Privacy</a><a href="#top">Back to top ↑</a></div></footer>
     </main>
   );
 }

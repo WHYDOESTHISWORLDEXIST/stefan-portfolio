@@ -84,7 +84,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <footer className="footer shell"><span>© 2026 Stefan</span><a href="/">Back home ↑</a></footer>
+      <footer className="footer shell"><span>© 2026 Stefan</span><div className="footerLinks"><a href="/privacy">Privacy</a><a href="/">Back home ↑</a></div></footer>
     </main>
   );
 }
