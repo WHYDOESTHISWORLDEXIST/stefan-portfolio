@@ -6,7 +6,7 @@ const projects = [
     tools: 'Python · Arduino / C++ · Raspberry Pi',
   },
   {
-    year: 'Built in 2026',
+    year: 'In development',
     title: 'Tolerance analysis calculator',
     description: 'A browser-based engineering tool for tolerance stacks, Monte Carlo simulation, design guidance, CAD data, saved projects, and report exports.',
     tools: 'TypeScript · Next.js · Engineering math',
