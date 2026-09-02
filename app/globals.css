@@ -102,4 +102,19 @@ a { color:inherit; text-decoration:none; }
   .intro { font-size:20px; }
   .contact h2 { font-size:39px; }
 }
+.supportLayout { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:80px; align-items:center; padding:116px 0 140px; min-height:calc(100vh - 160px); }
+.supportIntro h1 { margin:22px 0 28px; font-size:clamp(52px,6.5vw,82px); line-height:.98; letter-spacing:-.065em; }
+.supportIntro>p:not(.kicker) { margin:0 0 28px; max-width:500px; font-size:18px; line-height:1.6; color:var(--muted); }
+.supportCard { padding:36px; background:var(--paper); border:1px solid var(--line); }
+.supportCard h2 { margin:28px 0 14px; font-size:35px; line-height:1.1; letter-spacing:-.045em; }
+.supportCard>p:not(.kicker) { color:var(--muted); font-size:15px; line-height:1.6; }
+.coffeeButton { display:flex; align-items:center; justify-content:center; min-height:52px; margin-top:30px; padding:14px 18px; border-radius:999px; background:#ffdd00; color:#171717; font-size:14px; font-weight:600; text-align:center; }
+.coffeeButton:hover { background:#f0cf00; }
+.coffeeButton:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+.supportCard>.supportNote { font-size:12px; margin:18px 0 0; }
+@media (max-width:760px) {
+  .supportLayout { grid-template-columns:minmax(0,1fr); gap:42px; padding:72px 0 88px; min-height:0; }
+  .supportIntro h1 { font-size:clamp(48px,13vw,72px); }
+  .supportCard { padding:28px 22px; }
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -17,7 +17,7 @@ export default function MusicPage() {
     <main id="top" className="musicPage">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="returnButton" href="/">← Return home</a>
-        <div className="navLinks"><a href="/about">About me</a><a href="#playlists">Playlists</a><a href="/contact">Contact</a></div>
+        <div className="navLinks"><a href="/about">About me</a><a href="#playlists">Playlists</a><a href="/support">Support</a><a href="/contact">Contact</a></div>
       </nav>
 
       <header className="musicHero shell">

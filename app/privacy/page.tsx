@@ -8,7 +8,7 @@ export default function PrivacyPage() {
     <main className="privacyPage" id="top">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="returnButton" href="/">← Return home</a>
-        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="/contact">Contact</a></div>
+        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="/support">Support</a><a href="/contact">Contact</a></div>
       </nav>
 
       <header className="privacyHero shell">

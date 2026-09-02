@@ -10,7 +10,7 @@ export default function ContactPage() {
     <main className="contactPage" id="top">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="returnButton" href="/">← Return home</a>
-        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="mailto:stefan.cutler@gmail.com">Email</a></div>
+        <div className="navLinks"><a href="/about">About me</a><a href="/music">Music</a><a href="/support">Support</a><a href="mailto:stefan.cutler@gmail.com">Email</a></div>
       </nav>
       <section className="contactLayout shell">
         <div className="contactIntro">
