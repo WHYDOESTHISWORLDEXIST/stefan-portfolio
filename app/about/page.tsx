@@ -17,7 +17,7 @@ const shelves = [
   {
     number: '03',
     title: 'Books I recommend',
-    note: 'Recommendations coming soon.',
+    note: '1984 · Rich Dad Poor Dad',
   },
   {
     number: '04',
