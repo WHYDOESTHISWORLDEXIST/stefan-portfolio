@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, UnifrakturCook, Bodoni_Moda } from 'next/font/google';
 import './globals.css';
 
 const geistSans = Geist({
@@ -10,6 +10,20 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const gothicHeading = UnifrakturCook({
+  variable: '--font-gothic',
+  subsets: ['latin'],
+  weight: '700',
+  display: 'swap',
+});
+
+const serifHeading = Bodoni_Moda({
+  variable: '--font-editorial',
+  subsets: ['latin'],
+  weight: '500',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -37,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${gothicHeading.variable} ${serifHeading.variable} antialiased`}
       >
         {children}
       </body>
