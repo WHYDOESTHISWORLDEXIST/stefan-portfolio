@@ -1,6 +1,12 @@
 const projects = [
   {
     year: 'In development',
+    title: 'DECK — DECA practice app',
+    description: 'A study app with AI-generated practice tests, a question bank, event vocabulary, daily roleplays, and progress tracking. An independent project, not affiliated with DECA Inc.',
+    tools: 'TypeScript · Next.js · Python · Supabase',
+  },
+  {
+    year: 'In development',
     title: 'Hydra robotic arm controls',
     description: 'Contributing documentation and software work to a Raspberry Pi and Arduino control system with calibration, encoder feedback, clutch control, and safety monitoring.',
     tools: 'Python · Arduino / C++ · Raspberry Pi',
@@ -31,7 +37,7 @@ export default function Home() {
           <a href="#certifications"><span>Certifications</span><strong>2</strong></a>
           <a href="#books"><span>Books published</span><strong>1</strong></a>
           <a href="#websites"><span>Websites launched</span><strong>1</strong></a>
-          <a href="#projects"><span>Current projects</span><strong>3</strong></a>
+          <a href="#projects"><span>Current projects</span><strong>{projects.length}</strong></a>
         </div>
       </div>
 
