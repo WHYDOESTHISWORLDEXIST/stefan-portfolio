@@ -6,10 +6,19 @@ type ContactPayload = { name?: unknown; email?: unknown; message?: unknown; news
 type ContactEnvironment = {
   DB: D1Database;
   RESEND_API_KEY?: string;
+  RESEND_NEWSLETTER_SEGMENT_ID?: string;
   CONTACT_FROM_EMAIL?: string;
 };
 
 const CONTACT_EMAIL = 'stefan.cutler@gmail.com';
+
+function resendHeaders(apiKey: string) {
+  return {
+    authorization: `Bearer ${apiKey}`,
+    'content-type': 'application/json',
+    'user-agent': 'StefanPortfolio/1.0',
+  };
+}
 
 function escapeHtml(value: string) {
   return value
@@ -30,10 +39,7 @@ async function sendContactEmail(
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
-    headers: {
-      authorization: `Bearer ${runtimeEnv.RESEND_API_KEY}`,
-      'content-type': 'application/json',
-    },
+    headers: resendHeaders(runtimeEnv.RESEND_API_KEY),
     body: JSON.stringify({
       from: runtimeEnv.CONTACT_FROM_EMAIL || "Stefan's Portfolio <onboarding@resend.dev>",
       to: [CONTACT_EMAIL],
@@ -65,6 +71,48 @@ async function sendContactEmail(
   }
 }
 
+async function subscribeToNewsletter(
+  runtimeEnv: ContactEnvironment,
+  subscriber: { name: string; email: string },
+) {
+  const apiKey = runtimeEnv.RESEND_API_KEY;
+  const segmentId = runtimeEnv.RESEND_NEWSLETTER_SEGMENT_ID;
+  if (!apiKey || !segmentId) {
+    throw new Error('The newsletter contact list is not configured.');
+  }
+
+  const createResponse = await fetch('https://api.resend.com/contacts', {
+    method: 'POST',
+    headers: resendHeaders(apiKey),
+    body: JSON.stringify({
+      email: subscriber.email,
+      first_name: subscriber.name,
+      unsubscribed: false,
+      segments: [{ id: segmentId }],
+    }),
+  });
+
+  // A repeat signup can already exist as a global Resend contact.
+  if (!createResponse.ok && createResponse.status !== 409) {
+    const details = await createResponse.text();
+    console.error('[contact] Resend rejected the newsletter contact', createResponse.status, details);
+    throw new Error('Newsletter signup failed.');
+  }
+
+  if (createResponse.status === 409) {
+    const segmentResponse = await fetch(
+      `https://api.resend.com/contacts/${encodeURIComponent(subscriber.email)}/segments/${segmentId}`,
+      { method: 'POST', headers: resendHeaders(apiKey) },
+    );
+
+    if (!segmentResponse.ok && segmentResponse.status !== 409) {
+      const details = await segmentResponse.text();
+      console.error('[contact] Resend rejected the segment membership', segmentResponse.status, details);
+      throw new Error('Newsletter signup failed.');
+    }
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json() as ContactPayload;
@@ -86,6 +134,10 @@ export async function POST(request: Request) {
     await db.prepare('INSERT INTO contact_submissions (name, email, message, newsletter_opt_in) VALUES (?, ?, ?, ?)')
       .bind(name, email, message, newsletter)
       .run();
+
+    if (newsletter === 1) {
+      await subscribeToNewsletter(runtimeEnv, { name, email });
+    }
 
     await sendContactEmail(runtimeEnv, {
       name,
