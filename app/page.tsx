@@ -1,29 +1,5 @@
-const projects = [
-  {
-    year: 'In development',
-    title: 'DECK — DECA practice app',
-    description: 'A study app with AI-generated practice tests, a question bank, event vocabulary, daily roleplays, and progress tracking. An independent project, not affiliated with DECA Inc.',
-    tools: 'TypeScript · Next.js · Python · Supabase',
-  },
-  {
-    year: 'In development',
-    title: 'Hydra robotic arm controls',
-    description: 'Contributing documentation and software work to a Raspberry Pi and Arduino control system with calibration, encoder feedback, clutch control, and safety monitoring.',
-    tools: 'Python · Arduino / C++ · Raspberry Pi',
-  },
-  {
-    year: 'In development',
-    title: 'Tolerance analysis calculator',
-    description: 'A browser-based engineering tool for tolerance stacks, Monte Carlo simulation, design guidance, CAD data, saved projects, and report exports.',
-    tools: 'TypeScript · Next.js · Engineering math',
-  },
-  {
-    year: 'Research phase',
-    title: 'Modular robotic arm',
-    description: 'Exploring a lower-cost arm made from interchangeable sections and pulley-driven hands, with software that adapts motion and grasp planning to each configuration.',
-    tools: 'Robotics · Machine learning · Mechanical design',
-  },
-];
+import Link from 'next/link';
+import { projects } from './projects/projects';
 
 export default function Home() {
   return (
@@ -52,15 +28,15 @@ export default function Home() {
         <header className="sectionHead"><p>01 / Work</p><h2>Things I&apos;m making</h2></header>
         <div className="projectList">
           {projects.map((project, index) => (
-            <article className="project" key={project.title}>
+            <Link className="project" href={`/projects/${project.slug}`} key={project.title}>
               <span className="projectNumber">0{index + 1}</span>
               <div>
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                {'href' in project && project.href ? <a href={project.href} target="_blank" rel="noreferrer">View project ↗</a> : null}
+                <p>{project.shortDescription}</p>
+                <span className="projectReadMore">Read project story →</span>
               </div>
               <div className="projectMeta"><span>{project.tools}</span><span>{project.year}</span></div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
