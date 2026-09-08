@@ -11,6 +11,38 @@ type ContactEnvironment = {
 };
 
 const CONTACT_EMAIL = 'stefan.cutler@gmail.com';
+const OPERATION_TIMEOUT_MS = 6_000;
+
+class OperationTimeoutError extends Error {
+  constructor(operation: string) {
+    super(`${operation} timed out.`);
+    this.name = 'OperationTimeoutError';
+  }
+}
+
+async function withTimeout<T>(operation: string, task: Promise<T>, timeoutMs = OPERATION_TIMEOUT_MS) {
+  let timeout: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      task,
+      new Promise<never>((_, reject) => {
+        timeout = setTimeout(() => reject(new OperationTimeoutError(operation)), timeoutMs);
+      }),
+    ]);
+  } finally {
+    if (timeout) clearTimeout(timeout);
+  }
+}
+
+async function resendFetch(url: string, init: RequestInit, operation: string) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(new OperationTimeoutError(operation)), OPERATION_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 function resendHeaders(apiKey: string) {
   return {
@@ -37,7 +69,7 @@ async function sendContactEmail(
     throw new Error('RESEND_API_KEY is not configured.');
   }
 
-  const response = await fetch('https://api.resend.com/emails', {
+  const response = await resendFetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: resendHeaders(runtimeEnv.RESEND_API_KEY),
     body: JSON.stringify({
@@ -62,7 +94,7 @@ async function sendContactEmail(
         submission.message,
       ].join('\n'),
     }),
-  });
+  }, 'Contact email');
 
   if (!response.ok) {
     const details = await response.text();
@@ -81,7 +113,7 @@ async function subscribeToNewsletter(
     throw new Error('The newsletter contact list is not configured.');
   }
 
-  const createResponse = await fetch('https://api.resend.com/contacts', {
+  const createResponse = await resendFetch('https://api.resend.com/contacts', {
     method: 'POST',
     headers: resendHeaders(apiKey),
     body: JSON.stringify({
@@ -90,7 +122,7 @@ async function subscribeToNewsletter(
       unsubscribed: false,
       segments: [{ id: segmentId }],
     }),
-  });
+  }, 'Newsletter signup');
 
   // A repeat signup can already exist as a global Resend contact.
   if (!createResponse.ok && createResponse.status !== 409) {
@@ -100,9 +132,10 @@ async function subscribeToNewsletter(
   }
 
   if (createResponse.status === 409) {
-    const segmentResponse = await fetch(
+    const segmentResponse = await resendFetch(
       `https://api.resend.com/contacts/${encodeURIComponent(subscriber.email)}/segments/${segmentId}`,
       { method: 'POST', headers: resendHeaders(apiKey) },
+      'Newsletter segment signup',
     );
 
     if (!segmentResponse.ok && segmentResponse.status !== 409) {
@@ -129,24 +162,41 @@ export async function POST(request: Request) {
     }
 
     const runtimeEnv = env as unknown as ContactEnvironment;
-    const db = runtimeEnv.DB;
-    await db.prepare(contactSubmissionsSchema).run();
-    await db.prepare('INSERT INTO contact_submissions (name, email, message, newsletter_opt_in) VALUES (?, ?, ?, ?)')
-      .bind(name, email, message, newsletter)
-      .run();
+    const saveSubmission = async () => {
+      const db = runtimeEnv.DB;
+      await db.prepare(contactSubmissionsSchema).run();
+      await db.prepare('INSERT INTO contact_submissions (name, email, message, newsletter_opt_in) VALUES (?, ?, ?, ?)')
+        .bind(name, email, message, newsletter)
+        .run();
+    };
 
-    if (newsletter === 1) {
-      await subscribeToNewsletter(runtimeEnv, { name, email });
+    const operations = await Promise.allSettled([
+      withTimeout('Saving contact submission', saveSubmission()),
+      sendContactEmail(runtimeEnv, { name, email, message, newsletter: newsletter === 1 }),
+      newsletter === 1
+        ? subscribeToNewsletter(runtimeEnv, { name, email })
+        : Promise.resolve(),
+    ]);
+
+    const [storageResult, emailResult, newsletterResult] = operations;
+    if (storageResult.status === 'rejected') console.error('[contact] Storage operation failed', storageResult.reason);
+    if (emailResult.status === 'rejected') console.error('[contact] Email operation failed', emailResult.reason);
+    if (newsletterResult.status === 'rejected') console.error('[contact] Newsletter operation failed', newsletterResult.reason);
+
+    if (storageResult.status === 'rejected' && emailResult.status === 'rejected') {
+      return Response.json(
+        { message: 'The form is temporarily unavailable. You can email Stefan directly instead.' },
+        { status: 503 },
+      );
     }
 
-    await sendContactEmail(runtimeEnv, {
-      name,
-      email,
-      message,
-      newsletter: newsletter === 1,
-    });
-
-    return Response.json({ message: 'Thanks — your message has been received.' }, { status: 201 });
+    const newsletterWarning = newsletter === 1 && newsletterResult.status === 'rejected'
+      ? ' Your message was received, but newsletter signup could not be completed. Please try signing up again later.'
+      : '';
+    return Response.json(
+      { message: `Thanks — your message has been received.${newsletterWarning}` },
+      { status: emailResult.status === 'fulfilled' ? 201 : 202 },
+    );
   } catch (error) {
     console.error('[contact] Submission failed', error);
     return Response.json({ message: 'The form is temporarily unavailable. You can email Stefan directly instead.' }, { status: 500 });

@@ -13,19 +13,26 @@ export default function ContactForm() {
     const form = event.currentTarget;
     const payload = Object.fromEntries(new FormData(form));
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12_000);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       });
       const result = await response.json() as { message?: string };
       if (!response.ok) throw new Error(result.message || 'Please try again.');
       form.reset();
-      setStatus('Thanks — your message has been received.');
+      setStatus(result.message || 'Thanks — your message has been received.');
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
+      setStatus(error instanceof DOMException && error.name === 'AbortError'
+        ? 'The request took too long. Please try again; the page is still working.'
+        : error instanceof Error ? error.message : 'Something went wrong. Please try again.');
     } finally {
+      clearTimeout(timeout);
       setSending(false);
     }
   }
