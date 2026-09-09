@@ -10,6 +10,7 @@ export type Project = {
   experience: string[];
   currentFocus: string;
   nextStep: string;
+  website?: { label: string; href: string };
   source?: { label: string; href: string };
 };
 
@@ -81,6 +82,7 @@ export const projects: Project[] = [
     ],
     currentFocus: 'Expanding advanced analysis while keeping the first-use experience approachable.',
     nextStep: 'Validate more real-world workflows and keep improving the path from a result to a practical design decision.',
+    website: { label: 'Visit the Stackwise website', href: 'https://stackwise-tolerance.stefan-cutler.chatgpt.site/' },
     source: { label: 'View Stackwise on GitHub', href: 'https://github.com/WHYDOESTHISWORLDEXIST/stackwise-tol' },
   },
   {

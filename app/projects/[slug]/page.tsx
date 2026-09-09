@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section><p className="storyLabel">01 / What it is</p><div><h2>The project</h2><p>{project.overview}</p></div></section>
         <section><p className="storyLabel">02 / My part</p><div><h2>What I contributed</h2><ul>{project.contribution.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
         <section><p className="storyLabel">03 / Experience</p><div><h2>What I have gained</h2><ul>{project.experience.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
-        <section><p className="storyLabel">04 / Now</p><div><h2>Where it is going</h2><h3>Current focus</h3><p>{project.currentFocus}</p><h3>Next step</h3><p>{project.nextStep}</p>{project.source && <a className="storySource" href={project.source.href} target="_blank" rel="noreferrer">{project.source.label} ↗</a>}</div></section>
+        <section><p className="storyLabel">04 / Now</p><div><h2>Where it is going</h2><h3>Current focus</h3><p>{project.currentFocus}</p><h3>Next step</h3><p>{project.nextStep}</p><div className="storyLinks">{project.website && <a className="storySource" href={project.website.href} target="_blank" rel="noreferrer">{project.website.label} ↗</a>}{project.source && <a className="storySource" href={project.source.href} target="_blank" rel="noreferrer">{project.source.label} ↗</a>}</div></div></section>
       </article>
 
       <aside className="nextProject shell">
