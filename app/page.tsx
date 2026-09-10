@@ -10,10 +10,10 @@ export default function Home() {
       </nav>
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
-          <a href="#certifications"><span>Certifications</span><strong>2</strong></a>
-          <a href="#books"><span>Books published</span><strong>1</strong></a>
-          <a href="#websites"><span>Websites launched</span><strong>1</strong></a>
-          <a href="#projects"><span>Current projects</span><strong>{projects.length}</strong></a>
+          <Link href="/certifications"><span>Certifications</span><strong>2</strong></Link>
+          <Link href="/books"><span>Books published</span><strong>1</strong></Link>
+          <Link href="/websites"><span>Websites launched</span><strong>2</strong></Link>
+          <Link href="/projects"><span>Current projects</span><strong>{projects.length}</strong></Link>
         </div>
       </div>
 

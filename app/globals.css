@@ -112,6 +112,36 @@ img, video { height: auto; }
   .shelf, .educationEntry { grid-template-columns: 1.75rem minmax(0, 1fr); }
   .shelf p, .educationEntry p { grid-column: 2; }
 }
+
+/* Dedicated pages opened by the homepage topic tabs. */
+.topicHero { padding-block: clamp(5rem, 11vw, 9rem) clamp(3.5rem, 7vw, 6rem); }
+.topicHero h1 { max-width: 13ch; margin: .8rem 0 2rem; font-family: var(--font-gothic), Georgia, serif; font-size: clamp(3.25rem, 1.5rem + 7vw, 7.5rem); line-height: .98; text-wrap: balance; }
+.topicHero > p:last-child { width: min(100%, 44rem); margin: 0 0 0 auto; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem); line-height: 1.4; }
+.topicContent { padding-bottom: clamp(5rem, 10vw, 9rem); border-top: 1px solid var(--line); }
+.topicEntry { display: grid; grid-template-columns: clamp(2rem, 5vw, 4rem) minmax(0, 1fr); gap: clamp(1rem, 4vw, 3rem); padding-block: clamp(2rem, 5vw, 4rem); border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
+.topicEntry > span, .publishedBook > div > span, .topicProjectCard > span { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.topicEntry h2, .publishedBook h2, .topicProjectCard h2 { margin: 0; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(1.7rem, 1.15rem + 2vw, 3.25rem); font-weight: 500; line-height: 1.1; }
+.topicEntry p { margin: .7rem 0 0; }
+.topicEntry .topicNote { max-width: 44rem; margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.65; }
+.topicEntryLink { transition: padding-inline .2s ease, background-color .2s ease; }
+.topicEntryLink:hover { padding-inline: 1rem; background: color-mix(in srgb, var(--line) 28%, transparent); }
+.topicEntryLink strong { display: inline-block; margin-top: 1.5rem; }
+.publishedBook { display: grid; grid-template-columns: minmax(10rem, 18rem) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(3rem, 7vw, 6rem); color: inherit; text-decoration: none; }
+.publishedBook img { width: 100%; height: auto; border: 1px solid var(--line); }
+.publishedBook h2 { max-width: 16ch; margin-top: 1rem; }
+.publishedBook p { max-width: 38rem; margin: 2rem 0; font-size: 1.1rem; line-height: 1.65; }
+.topicProjectGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.topicProjectCard { min-height: 24rem; padding: clamp(1.5rem, 4vw, 3rem); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
+.topicProjectCard:nth-child(even) { border-right: 0; }
+.topicProjectCard h2 { margin-top: clamp(3rem, 7vw, 6rem); }
+.topicProjectCard p { max-width: 32rem; margin: 1.5rem 0 2.5rem; line-height: 1.6; }
+.topicProjectCard strong { font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; }
+@media (max-width: 42rem) {
+  .topicHero > p:last-child { margin-left: 0; }
+  .publishedBook, .topicProjectGrid { grid-template-columns: minmax(0, 1fr); }
+  .publishedBook img { width: min(70%, 15rem); }
+  .topicProjectCard, .topicProjectCard:nth-child(even) { min-height: 20rem; border-right: 0; }
+}
 @media (max-width: 30rem) {
   .navLinks { width: 100%; justify-content: space-between; border-top: 1px solid var(--line); padding-top: .5rem; }
   .appleMusicLink { width: 100%; }
