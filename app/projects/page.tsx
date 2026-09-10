@@ -14,12 +14,12 @@ export default function ProjectsPage() {
     <TopicShell eyebrow="Work in progress" title="Current projects" intro="What I am building, researching, and learning from right now. Select a project for the full story.">
       <div className="topicProjectGrid">
         {projects.map((project, index) => (
-          <a className="topicProjectCard" href={`/projects/${project.slug}`} key={project.slug}>
+          <article className="topicProjectCard" key={project.slug}>
             <span>0{index + 1} / {project.year}</span>
             <h2>{project.title}</h2>
             <p>{project.shortDescription}</p>
-            <strong>Read project story →</strong>
-          </a>
+            <a href={`/projects/${project.slug}`} target="_self">Open project page →</a>
+          </article>
         ))}
       </div>
     </TopicShell>

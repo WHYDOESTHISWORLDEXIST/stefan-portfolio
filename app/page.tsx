@@ -27,15 +27,15 @@ export default function Home() {
         <header className="sectionHead"><p>01 / Work</p><h2>Things I&apos;m making</h2></header>
         <div className="projectList">
           {projects.map((project, index) => (
-            <a className="project" href={`/projects/${project.slug}`} key={project.title}>
+            <article className="project" key={project.title}>
               <span className="projectNumber">0{index + 1}</span>
               <div>
                 <h3>{project.title}</h3>
                 <p>{project.shortDescription}</p>
-                <span className="projectReadMore">Read project story →</span>
+                <a className="projectReadMore" href={`/projects/${project.slug}`} target="_self">Open project page →</a>
               </div>
               <div className="projectMeta"><span>{project.tools}</span><span>{project.year}</span></div>
-            </a>
+            </article>
           ))}
         </div>
       </section>
