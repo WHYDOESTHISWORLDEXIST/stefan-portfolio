@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProject, projects } from '../projects';
 
@@ -29,8 +28,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main id="top" className="projectPage">
       <nav className="nav shell" aria-label="Project navigation">
-        <Link className="wordmark" href="/">Stefan</Link>
-        <Link className="returnButton" href="/#projects">← All projects</Link>
+        <a className="wordmark" href="/">Stefan</a>
+        <a className="returnButton" href="/projects">← All projects</a>
       </nav>
 
       <header className="projectStoryHero shell">
@@ -52,9 +51,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <aside className="nextProject shell">
         <p>Next project</p>
-        <Link href={`/projects/${nextProject.slug}`}>{nextProject.title} <span>→</span></Link>
+        <a href={`/projects/${nextProject.slug}`}>{nextProject.title} <span>→</span></a>
       </aside>
-      <footer className="footer shell"><span>© 2026 Stefan Cutler</span><Link href="/#projects">Project index</Link></footer>
+      <footer className="footer shell"><span>© 2026 Stefan Cutler</span><a href="/projects">Project index</a></footer>
     </main>
   );
 }

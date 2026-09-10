@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 
 type TopicShellProps = {
   eyebrow: string;
@@ -12,8 +11,8 @@ export default function TopicShell({ eyebrow, title, intro, children }: TopicShe
   return (
     <main id="top" className="topicPage">
       <nav className="nav shell" aria-label="Topic navigation">
-        <Link className="wordmark" href="/">Stefan</Link>
-        <Link className="returnButton" href="/">← Home</Link>
+        <a className="wordmark" href="/">Stefan</a>
+        <a className="returnButton" href="/">← Home</a>
       </nav>
       <header className="topicHero shell">
         <p className="kicker">{eyebrow}</p>
@@ -21,7 +20,7 @@ export default function TopicShell({ eyebrow, title, intro, children }: TopicShe
         <p>{intro}</p>
       </header>
       <section className="topicContent shell">{children}</section>
-      <footer className="footer shell"><span>© 2026 Stefan Cutler</span><Link href="/">Back home</Link></footer>
+      <footer className="footer shell"><span>© 2026 Stefan Cutler</span><a href="/">Back home</a></footer>
     </main>
   );
 }

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { projects } from './projects/projects';
 
 export default function Home() {
@@ -10,10 +9,10 @@ export default function Home() {
       </nav>
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
-          <Link href="/certifications"><span>Certifications</span><strong>2</strong></Link>
-          <Link href="/books"><span>Books published</span><strong>1</strong></Link>
-          <Link href="/websites"><span>Websites launched</span><strong>2</strong></Link>
-          <Link href="/projects"><span>Current projects</span><strong>{projects.length}</strong></Link>
+          <a href="/certifications"><span>Certifications</span><strong>2</strong></a>
+          <a href="/books"><span>Books published</span><strong>1</strong></a>
+          <a href="/websites"><span>Websites launched</span><strong>2</strong></a>
+          <a href="/projects"><span>Current projects</span><strong>{projects.length}</strong></a>
         </div>
       </div>
 
@@ -28,7 +27,7 @@ export default function Home() {
         <header className="sectionHead"><p>01 / Work</p><h2>Things I&apos;m making</h2></header>
         <div className="projectList">
           {projects.map((project, index) => (
-            <Link className="project" href={`/projects/${project.slug}`} key={project.title}>
+            <a className="project" href={`/projects/${project.slug}`} key={project.title}>
               <span className="projectNumber">0{index + 1}</span>
               <div>
                 <h3>{project.title}</h3>
@@ -36,7 +35,7 @@ export default function Home() {
                 <span className="projectReadMore">Read project story →</span>
               </div>
               <div className="projectMeta"><span>{project.tools}</span><span>{project.year}</span></div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>
