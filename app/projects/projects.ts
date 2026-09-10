@@ -107,6 +107,51 @@ export const projects: Project[] = [
     currentFocus: 'Defining the control problem and a simulation strategy before committing to a training approach.',
     nextStep: 'Build a small simulated joint-and-clutch model and use it to compare rule-based and learned control strategies.',
   },
+  {
+    slug: 'click-beetle-wooden-hopper',
+    year: 'Prototype phase',
+    title: 'Click-beetle wooden hopper',
+    shortDescription: 'A wooden mechanical hopper that translates the click beetle’s fast load, latch, and release motion into a physical prototype.',
+    tools: 'Biomimicry · Mechanism design · Wood fabrication',
+    role: 'Designer and builder',
+    overview: 'This project uses the click beetle as a model for a compact jumping mechanism. Click beetles bend across a thoracic hinge, store elastic energy while latched, and release it rapidly to strike the ground and launch themselves. The wooden prototype turns that biological sequence into a mechanism that can be observed, adjusted, and tested.',
+    contribution: [
+      'Studying the beetle’s major motion stages and translating biological components into mechanical functions: loading, energy storage, latching, release, impact, and takeoff.',
+      'Developing the structure as a wooden prototype so the geometry, joints, and release behavior can be fabricated and revised quickly.',
+      'Planning tests around repeatability, jump height, stability, release timing, and how changes in geometry affect the launch.',
+    ],
+    experience: [
+      'Using biological motion as engineering inspiration without simply copying its appearance.',
+      'Breaking a fast, complicated movement into a sequence of understandable mechanical states.',
+      'Connecting stored elastic energy, ground reaction force, rotation, and takeoff to a buildable mechanism.',
+      'Learning through physical iteration, observation, measurement, and failure.',
+    ],
+    currentFocus: 'Turning the click beetle’s load–latch–release sequence into a simple wooden mechanism that can hop reliably.',
+    nextStep: 'Build the first working prototype, record its motion, and use the results to revise the hinge, latch, and energy-storage geometry.',
+  },
+  {
+    slug: 'smart-mirror',
+    year: 'Planning phase',
+    title: 'Smart mirror',
+    shortDescription: 'A two-way mirror with a hidden display for useful daily information, designed around an inexpensive and expandable computer.',
+    tools: 'Single-board computers · Linux · Web dashboards · Woodworking',
+    role: 'Designer and builder',
+    overview: 'The smart mirror combines a two-way mirror, monitor, compact computer, and wooden frame. Bright interface elements show through the reflective surface while dark areas disappear, creating a normal-looking mirror that can also display a clock, weather, calendar information, reminders, news, and simple animations.',
+    contribution: [
+      'Defining the full physical stack: mirror surface, monitor, computer, power, mounting, ventilation, backing, and wooden frame.',
+      'Comparing Raspberry Pi and lower-cost alternatives such as the Orange Pi Zero 3, as well as reused laptops or mini PCs.',
+      'Planning a beginner-friendly software setup using Linux, a full-screen dashboard, and an interface that remains legible through the mirror.',
+      'Keeping the design expandable for later additions such as sensors, LEDs, voice control, or an Arduino for physical electronics.',
+    ],
+    experience: [
+      'Evaluating a component by total project cost, documentation, performance, and ease of integration—not only its purchase price.',
+      'Planning a project that combines woodworking, displays, power, thermal management, Linux, and web software.',
+      'Designing interface contrast and information density for an unusual display surface.',
+      'Separating a first useful version from optional features that can be added after the basic system works.',
+    ],
+    currentFocus: 'Choosing the display and low-cost computer, then validating the dashboard on an ordinary monitor before building the mirror enclosure.',
+    nextStep: 'Assemble the computer and display, run the dashboard full-screen, and test brightness and readability behind a sample of two-way mirror material.',
+  },
 ];
 
 export function getProject(slug: string) {
