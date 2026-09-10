@@ -9,7 +9,7 @@ export default function Home() {
       </nav>
       <div className="topicBar" aria-label="Portfolio topics">
         <div className="shell topicBarInner">
-          <a href="/certifications"><span>Certifications</span><strong>2</strong></a>
+          <a href="/certifications"><span>Certifications</span><strong>3</strong></a>
           <a href="/books"><span>Books published</span><strong>1</strong></a>
           <a href="/websites"><span>Websites launched</span><strong>2</strong></a>
           <a href="/projects"><span>Current projects</span><strong>{projects.length}</strong></a>
@@ -46,9 +46,10 @@ export default function Home() {
           <div className="recordEntry"><strong>Personal portfolio</strong><span>This website · 2026</span></div>
         </div>
         <div className="recordBlock" id="certifications">
-          <div className="recordTitle"><p>Certifications</p><span>02</span></div>
+          <div className="recordTitle"><p>Certifications</p><span>03</span></div>
           <div className="recordEntry"><strong>HubSpot Marketing Certification</strong><span>HubSpot Academy</span></div>
           <div className="recordEntry"><strong>Rat Tickling Certification</strong><span>Purdue University</span></div>
+          <div className="recordEntry"><strong>Montana Bear Identification Certification</strong><span>Montana Fish, Wildlife &amp; Parks</span></div>
         </div>
         <div className="recordBlock" id="books">
           <div className="recordTitle"><p>Books published</p><span>01</span></div>

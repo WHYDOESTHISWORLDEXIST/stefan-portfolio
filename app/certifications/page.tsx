@@ -13,6 +13,7 @@ export default function CertificationsPage() {
     <TopicShell eyebrow="Credentials" title="Certifications" intro="Formal and informal courses I have completed while following my curiosity across marketing, science, and technology.">
       <article className="topicEntry"><span>01</span><div><h2>HubSpot Marketing Certification</h2><p>HubSpot Academy</p><p className="topicNote">Coursework in the principles and tools used to plan, communicate, and measure digital marketing.</p></div></article>
       <article className="topicEntry"><span>02</span><div><h2>Rat Tickling Certification</h2><p>Purdue University</p><p className="topicNote">Training in a research-backed handling and enrichment technique intended to improve rat welfare.</p></div></article>
+      <article className="topicEntry"><span>03</span><div><h2>Montana Bear Identification Certification</h2><p>Montana Fish, Wildlife &amp; Parks</p><p className="topicNote">Training in distinguishing black bears from grizzly bears using physical features and field observations.</p></div></article>
     </TopicShell>
   );
 }
