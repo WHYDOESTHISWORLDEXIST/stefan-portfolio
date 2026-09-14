@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, UnifrakturCook, Bodoni_Moda } from 'next/font/google';
+import { Geist, Geist_Mono, Bodoni_Moda } from 'next/font/google';
 import './globals.css';
 
 const geistSans = Geist({
@@ -12,13 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const gothicHeading = UnifrakturCook({
-  variable: '--font-gothic',
-  subsets: ['latin'],
-  weight: '700',
-  display: 'swap',
-});
-
 const serifHeading = Bodoni_Moda({
   variable: '--font-editorial',
   subsets: ['latin'],
@@ -29,7 +22,7 @@ const serifHeading = Bodoni_Moda({
 export const metadata: Metadata = {
   title: 'Stefan — Developer & Creative Builder',
   description: 'Personal portfolio of Stefan, an aspiring developer building thoughtful and useful digital experiences.',
-  metadataBase: new URL('https://stefa-developer-portfolio.stefan-cutler.chatgpt.site'),
+  metadataBase: new URL('https://stefan-portfolio.stefan-cutler.workers.dev'),
   openGraph: {
     title: 'Stefan — Developer & Creative Builder',
     description: 'Developer in progress.',
@@ -51,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${gothicHeading.variable} ${serifHeading.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${serifHeading.variable} antialiased`}
       >
         {children}
       </body>

@@ -18,7 +18,7 @@ export default function ProjectsPage() {
             <span>0{index + 1} / {project.year}</span>
             <h2>{project.title}</h2>
             <p>{project.shortDescription}</p>
-            <a href={`/projects/${project.slug}`} target="_self">Open project page →</a>
+            <a href={`/projects/${project.slug}`}>Open project page →</a>
           </article>
         ))}
       </div>

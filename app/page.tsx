@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { projects } from './projects/projects';
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
         <p className="kicker">Developer in progress</p>
         <h1>Hello, I&apos;m Stefan.</h1>
         <p className="intro">I&apos;m learning to build for the web. This is where I keep track of what I&apos;ve made, what I&apos;m figuring out, and what comes next.</p>
-        <div className="heroMeta"><a href="#projects">See what I&apos;m working on ↓</a><span>Last updated August 2026</span></div>
+        <div className="heroMeta"><a href="#projects">See what I&apos;m working on ↓</a><span>Last updated September 2026</span></div>
       </section>
 
       <section className="work shell" id="projects">
@@ -32,7 +33,7 @@ export default function Home() {
               <div>
                 <h3>{project.title}</h3>
                 <p>{project.shortDescription}</p>
-                <a className="projectReadMore" href={`/projects/${project.slug}`} target="_self">Open project page →</a>
+                <a className="projectReadMore" href={`/projects/${project.slug}`}>Open project page →</a>
               </div>
               <div className="projectMeta"><span>{project.tools}</span><span>{project.year}</span></div>
             </article>
@@ -54,7 +55,7 @@ export default function Home() {
         <div className="recordBlock" id="books">
           <div className="recordTitle"><p>Books published</p><span>01</span></div>
           <a className="recordEntry recordLink bookEntry" href="https://www.amazon.com/dp/B0HBPKS26N" target="_blank" rel="noreferrer">
-            <img src="/book-semiconductors.jpg" alt="Cover of Semiconductors: All About Them, I Guess? by Stefan Cutler" />
+            <Image src="/book-semiconductors.jpg" width={750} height={1200} sizes="(max-width: 672px) 30vw, 150px" alt="Cover of Semiconductors: All About Them, I Guess? by Stefan Cutler" />
             <span className="bookDetails"><strong>Semiconductors: All About Them, I Guess?</strong><span>View on Amazon ↗</span></span>
           </a>
         </div>

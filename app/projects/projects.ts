@@ -36,7 +36,6 @@ export const projects: Project[] = [
     ],
     currentFocus: 'Improving question quality, instructional clarity, and the reliability of generated practice material.',
     nextStep: 'Continue strengthening content validation and make practice feedback more useful to students.',
-    source: { label: 'View DECK on GitHub', href: 'https://github.com/9Sura/DECK-APP' },
   },
   {
     slug: 'hydra-robotic-arm-controls',
@@ -59,7 +58,6 @@ export const projects: Project[] = [
     ],
     currentFocus: 'Making the control stack understandable, reproducible, and safer to operate during development.',
     nextStep: 'Keep the documentation synchronized as control logic, calibration, and hardware behavior evolve.',
-    source: { label: 'View Hydra on GitHub', href: 'https://github.com/eberhart441/hydra' },
   },
   {
     slug: 'stackwise-tolerance-calculator',
@@ -83,7 +81,6 @@ export const projects: Project[] = [
     currentFocus: 'Expanding advanced analysis while keeping the first-use experience approachable.',
     nextStep: 'Validate more real-world workflows and keep improving the path from a result to a practical design decision.',
     website: { label: 'Visit the Stackwise website', href: 'https://stackwise-tolerance-tool.stefan-paranos-cutle.chatgpt.site/' },
-    source: { label: 'View Stackwise on GitHub', href: 'https://github.com/WHYDOESTHISWORLDEXIST/stackwise-tol' },
   },
   {
     slug: 'modular-robotic-arm',

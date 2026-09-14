@@ -13,7 +13,7 @@ export default function SupportPage() {
       <section className="supportLayout shell">
         <header className="supportIntro">
           <p className="kicker">Support my work</p>
-          <h1>A little fuel for<br />the next idea.</h1>
+          <h1>A little fuel for<br />{' '}the next idea.</h1>
           <p>If you enjoy what I&apos;m making or writing, you can support me on Buy Me a Coffee. No pressure—thanks for taking a look around.</p>
           <a className="textLink" href="/#projects">See what I&apos;m working on ↗</a>
         </header>
