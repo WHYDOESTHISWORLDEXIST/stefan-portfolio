@@ -43,8 +43,9 @@ export default function Home() {
 
       <section className="record shell" aria-label="Published work and credentials">
         <div className="recordBlock" id="websites">
-          <div className="recordTitle"><p>Websites launched</p><span>01</span></div>
+          <div className="recordTitle"><p>Websites launched</p><span>02</span></div>
           <div className="recordEntry"><strong>Personal portfolio</strong><span>This website · 2026</span></div>
+          <a className="recordEntry recordLink" href="https://stackwise-tolerance-tool.stefan-paranos-cutle.chatgpt.site/" target="_blank" rel="noopener noreferrer"><strong>Stackwise tolerance calculator</strong><span>Visit website ↗</span></a>
         </div>
         <div className="recordBlock" id="certifications">
           <div className="recordTitle"><p>Certifications</p><span>03</span></div>
