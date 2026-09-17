@@ -38,8 +38,8 @@ export default function MusicPage() {
         <div className="featuredSong">
           <span className="featuredSongLabel">This week</span>
           <div>
-            <h2 id="song-of-week-title">Sober</h2>
-            <p>by Nettspend</p>
+            <h2 id="song-of-week-title">Hoops</h2>
+            <p>by Liam McCay</p>
           </div>
           <span className="featuredSongMark" aria-hidden="true">♪</span>
         </div>
