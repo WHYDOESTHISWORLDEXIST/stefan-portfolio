@@ -46,6 +46,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${serifHeading.variable} antialiased`}
       >
+        <aside className="identityBar" aria-label="Stefan Cutler contact links">
+          <div className="shell identityBarInner">
+            <span className="identityName">Stefan Cutler</span>
+            <nav className="identityLinks" aria-label="Contact and résumé">
+              <a href="mailto:stefan.cutler@gmail.com">stefan.cutler@gmail.com</a>
+              <a
+                href="https://www.linkedin.com/in/stefan-cutler-9015223b3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a href="/stefan-cutler-resume.pdf" target="_blank" rel="noopener noreferrer">
+                CV (PDF)
+              </a>
+            </nav>
+          </div>
+        </aside>
         {children}
       </body>
     </html>
