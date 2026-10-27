@@ -80,7 +80,7 @@ export const projects: Project[] = [
     ],
     currentFocus: 'Expanding advanced analysis while keeping the first-use experience approachable.',
     nextStep: 'Validate more real-world workflows and keep improving the path from a result to a practical design decision.',
-    website: { label: 'Visit the Stackwise website', href: 'https://stackwise-tolerance-tool.stefan-paranos-cutle.chatgpt.site/' },
+    website: { label: 'Visit the Stackwise website', href: '/stackwise' },
   },
   {
     slug: 'modular-robotic-arm',
